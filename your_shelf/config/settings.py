@@ -153,17 +153,6 @@ MIDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MIDIA_ROOT = '/var/www/{}/media'.format(PROJECT_NAME)
 MEDIA_URL = '/media/'
 
-
-
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
-
 # mail
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'localhost'

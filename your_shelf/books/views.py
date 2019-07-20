@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
-from users.models import User
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # from .forms import BookForm
 from django.http import HttpResponse

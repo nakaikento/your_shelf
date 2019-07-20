@@ -19,11 +19,11 @@ class SignupView(CreateView):
         return valid
 
 def index(request):
-    user_list = CustomUser.objects.order_by('name')
+    user_list = CustomUser.objects.order_by('username')
     return render(request, 'accounts/account_list.html', {'user_list': user_list})
 
 def user_detail(request, user_name):
-    user = CustomUser.objects.get(name=user_name)
+    user = CustomUser.objects.get(username=user_name)
     owning_books = Book.objects.filter(owner=user_name)
     borrowing_books = Book.objects.filter(borrower=user_name)
     context = {

@@ -24,4 +24,4 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         # 管理画面などで表示するstrにtitleを設定
-        return self.name
+        return self.username

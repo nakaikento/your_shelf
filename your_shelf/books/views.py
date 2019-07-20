@@ -52,7 +52,8 @@ def book_detail(request, book_title):
     if request.method == 'POST':
         #貸し出しリクエストに必要な変数
         owner_name = book.owner
-        borrower_name = "今ログインしている人"
+        # 現在ログインしている人の名を取る
+        borrower_name = request.user
         owner_email = User.objects.get(name= owner_name).email
 
         subject = "メール貸出リクエスト"

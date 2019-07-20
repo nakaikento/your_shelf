@@ -44,4 +44,3 @@
 	- publisher
 	- publish_date
 	- description
-

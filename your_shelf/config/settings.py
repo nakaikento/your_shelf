@@ -152,3 +152,28 @@ MIDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # 本番環境
 # MIDIA_ROOT = '/var/www/{}/media'.format(PROJECT_NAME)
 MEDIA_URL = '/media/'
+
+
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+# mail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
+EMAIL_SSL_CERTFILE = None
+EMAIL_SSL_KEYFILE = None
+EMAIL_TIMEOUT = None
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+SERVER_EMAIL = 'root@localhost'

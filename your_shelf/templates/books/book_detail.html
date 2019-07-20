@@ -22,6 +22,32 @@
         <span class="item">
             <div class="ui horizontal label">オーナー</div>
             <a href="{% url 'accounts:detail' user_name=book.owner %}">{{ book.owner }}</a>
+            <form action="" method="POST">
+              {% csrf_token %}
+              <button type="button" name="button1" id = "mail_btn" >貸出リクエスト</button>
+              <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+              <script src="{% static 'js/common.js' %}"></script>
+              <script>
+                $("#mail_btn").click(function(){
+                  console.log('button click detected!');
+                  var formData = new FormData();
+                  // formData.append("image", $(this)[0].files[0]);
+                  var token = '{{csrf_token}}';
+                  $.ajax({
+                    headers: { "X-CSRFToken": token },
+                    type: "post",
+                    url: "{% url 'books:book_detail' book_title=book.title %}",
+                    enctype: 'multipart/form-data',
+                    processData: false,
+                    contentType: false,
+                    data: formData,
+                    success: function(data){
+                      console.log(data)
+                    }
+                  });
+                });
+              </script>
+            </form>
         </span>
         <span class="item">
             <div class="ui horizontal label">ボロワー</div>

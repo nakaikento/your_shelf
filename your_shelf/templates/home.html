@@ -7,9 +7,14 @@
 {% if user.is_authenticated %}
 ようこそ {{ user.get_username }} さん
 <p><a href="{% url 'logout' %}">ログアウト</a></p>
+<div class="extra content">
+    <a href="{% url 'books:index' %}" class="ui right floated positive button">書籍一覧</a>
+</div>
+<div class="extra content">
+    <a href="{% url 'accounts:index' %}" class="ui right floated positive button">ユーザ一覧</a>
+</div>
 {% else %}
 <p><a href="{% url 'login' %}">ログイン</a></p>
 <p><a href="{% url 'accounts:signup' %}">新規登録</a></p>
 {% endif %}
 {% endblock %}
-

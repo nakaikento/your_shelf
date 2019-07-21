@@ -25,8 +25,8 @@ def index(request):
 
 def user_detail(request, user_name):
     user = CustomUser.objects.get(username=user_name)
-    owning_books = Book.objects.filter(owner=user_name)
-    borrowing_books = Book.objects.filter(borrower=user_name)
+    owning_books = Book.objects.filter(owner=user)
+    borrowing_books = Book.objects.filter(borrower=user)
     context = {
         'user': user,
         'owning_books': [owning_book for owning_book in owning_books],

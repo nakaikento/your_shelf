@@ -47,8 +47,8 @@ class BookDelete(DeleteView):
     success_url = reverse_lazy('books:index')
 
 
-def book_detail(request, book_title):
-    book = Book.objects.get(title=book_title)
+def book_detail(request, pk):
+    book = Book.objects.get(title=pk)
     if request.method == 'POST':
         #貸し出しリクエストに必要な変数
         owner_name = book.owner

@@ -8,6 +8,9 @@
 {% endblock %}
 
 {% block content %}
+<div class="extra content">
+    <a href="{% url 'accounts:index' %}" class="ui right floated positive button">ユーザ一覧</a>
+</div>
 <h1>ブックリスト</h1>
 <div class="ui four cards">
     {% for book in book_list %}

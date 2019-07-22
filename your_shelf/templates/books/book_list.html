@@ -13,31 +13,35 @@
 </div>
 <h1>ブックリスト</h1>
 <div class="ui four cards">
-    {% for book in book_list %}
-    <div class="ui card">
-        <div class="image">
-            {% if book.image %}
-            <img src="{{ book.image.url }}">
-            {% else %}
-            <img src="{% static 'images/unknown_book.png'%}">
-            {% endif %}
-        </div>
-        <div class="content">
-            <div class="header"><a href="{% url 'books:detail' book.title %}">{{ book.title }}</a></div>
-            <div class="ui divided list">
-              <span class="item">
-                  <div class="ui horizontal label">オーナー</div>
-                  <a href="{% url 'accounts:detail' user_name=book.owner %}">{{ book.owner }}</a>
-              </span>
-              <span class="item">
-                  <div class="ui horizontal label">ボロワー</div>
-                  <a href="{% url 'accounts:detail' user_name=book.borrower %}">{{ book.borrower }}</a>
-              </span>
-            </div>
-        </div>
-        <div class="extra content">
-            <a href="{% url 'books:detail' book.title %}" class="ui right floated positive button">書籍詳細</a>
-        </div>
+    {% for book_list in genre_list %}
+    <div class="category">
+      {% for book in book_list %}
+      <div class="ui card">
+          <div class="image">
+              {% if book.image %}
+              <img src="{{ book.image.url }}">
+              {% else %}
+              <img src="{% static 'images/unknown_book.png'%}">
+              {% endif %}
+          </div>
+          <div class="content">
+              <div class="header"><a href="{% url 'books:detail' book.title %}">{{ book.title }}</a></div>
+              <div class="ui divided list">
+                <span class="item">
+                    <div class="ui horizontal label">オーナー</div>
+                    <a href="{% url 'accounts:detail' user_name=book.owner %}">{{ book.owner }}</a>
+                </span>
+                <span class="item">
+                    <div class="ui horizontal label">ボロワー</div>
+                    <a href="{% url 'accounts:detail' user_name=book.borrower %}">{{ book.borrower }}</a>
+                </span>
+              </div>
+          </div>
+          <div class="extra content">
+              <a href="{% url 'books:detail' book.title %}" class="ui right floated positive button">書籍詳細</a>
+          </div>
+      </div>
+      {% endfor %}
     </div>
     {% endfor %}
 </div>

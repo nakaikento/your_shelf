@@ -11,8 +11,23 @@ from django.contrib import messages
 from django.views.generic import DetailView
 
 def index(request):
-    book_list = Book.objects.order_by('-publish_date')[:5]
-    return render(request, 'books/book_list.html', {'book_list':book_list})
+    # book_list = Book.objects.order_by('-publish_date')
+    data_science = Book.objects.filter(attrs='Data Science')
+    web = Book.objects.filter(attrs='Web')
+    mobile = Book.objects.filter(attrs='Mobile')
+    cloud = Book.objects.filter(attrs='Cloud')
+    entre = Book.objects.filter(attrs='起業')
+    etc = Book.objects.filter(attrs='その他')
+    data_science = [book for book in data_science]
+    web = [book for book in web]
+    mobile = [book for book in mobile]
+    entre = [book for book in entre]
+    etc = [book for book in etc]
+    context = {
+        'genre_list' : [data_science, web, mobile, cloud, entre, etc]
+    }
+    # return render(request, 'books/book_list.html', {'book_list':book_list})
+    return render(request, 'books/book_list.html', context)
 
 # class BookDetail(DetailView):
 #     model = Book

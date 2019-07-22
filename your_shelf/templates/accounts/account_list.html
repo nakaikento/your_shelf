@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %} ユーザリスト {% endblock %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% block content %}
+<div class="extra content">
+    <a href="{% url 'books:index' %}" class="ui right floated positive button">書籍一覧</a>
+</div>
+<h1>ユーザリスト</h1>
+<div class="ui four cards">
+    {% for user in user_list %}
+    <div class="ui card">
+        <div class="image">
+            {% if user.photo %}
+            <img src="{{ user.photo.url }}">
+            {% else %}
+            <img src="{% static 'images/unknown_user.png'%}">
+            {% endif %}
+        </div>
+        <div class="content">
+            <div class="header"><a href="{% url 'accounts:detail' user.username %}">{{ user.username }}</a></div>
+            <div class="ui divided list">
+            </div>
+        </div>
+        <div class="extra content">
+            <a href="{% url 'accounts:detail' user.username %}" class="ui right floated positive button">ユーザー詳細</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

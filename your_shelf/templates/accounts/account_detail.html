@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="header">{{ user.username }}</div>
+    <div class="ui divided list">
+      <div class="image">
+          {% if user.photo %}
+          <img src="{{ user.photo.url }}">
+          {% else %}
+          <img src="{% static 'images/unknown_user.png'%}">
+          {% endif %}
+      </div>
+      <span class="item">
+          <div class="ui horizontal label">E-mail</div>{{ user.email }}
+      </span>
+      <span class="item">
+          <div class="ui horizontal label">interest</div>{{ user.interest }}
+      </span>
+      {% if owning_books %}
+      <span class="item">
+        <div class="ui four cards">
+            <div class="ui horizontal label">所有している本</div>
+            {% for owning_book in owning_books %}
+            <div class="ui card">
+                <div class="image">
+                    {% if owning_book.image %}
+                    <img src="{{ owning_book.image.url }}">
+                    {% else %}
+                    <img src="{% static 'images/unknown_book.png'%}">
+                    {% endif %}
+                </div>
+                <span class="title">
+                    <a href="{% url 'books:detail' pk=owning_book.title %}">{{owning_book.title}}</a>
+                </span>
+          </div>
+          {% endfor %}
+      </div>
+    </span>
+    {% endif %}
+    {% if borrowing_books %}
+    <span class="item">
+      <div class="ui four cards">
+          <div class="ui horizontal label">借りている本</div>
+          {% for borrowing_book in borrowing_books %}
+          <div class="ui card">
+              <div class="image">
+                  {% if borrowing_book.image %}
+                  <img src="{{ borrowing_book.image.url }}">
+                  {% else %}
+                  <img src="{% static 'images/unknown_book.png'%}">
+                  {% endif %}
+              </div>
+              <span class="title">
+                  <a href="{% url 'books:detail' pk=borrowing_book.title %}">{{borrowing_book.title}}</a>
+              </span>
+        </div>
+        {% endfor %}
+    </div>
+  </span>
+  {% endif %}
+</div>
+<div class="extra content">
+    <a href="{% url 'accounts:index' %}" class="ui right floated positive button">ユーザ一覧</a>
+</div>
+{% endblock %}

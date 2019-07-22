@@ -13,18 +13,18 @@
 - Taiki
 
 ## URL
-- root/		                => ログイン画面
-- root/admin/                   => 管理者画面
-- root/books/                   => 本一覧
-- root/books/create		=> 本の登録画面
-- root/books/<title>		=> 本<title>の詳細ページ
-- root/books/<title>/update/	=> 本<title>の更新ページ
-- root/books/<title>/delete/	=> 本<title>の削除ページ
-- root/accounts/		=> ユーザ一覧
-- root/accounts/<user_id>/		=> ユーザ<id>詳細
-- root/accounts/<id>/update/    => ユーザ<id>の更新ページ
-- root/accounts/<id>/delete/    => ユーザ<id>の削除ページ
-- root/profiles/<id>/		=> ユーザ<id>のマイページ
+- root/		               	        => ログイン画面
+- root/admin/                  	        => 管理者画面
+- root/books/                  	        => 本一覧
+- root/books/create			=> 本の登録画面
+- root/books/<title>			=> 本<title>の詳細ページ
+- root/books/<title>/update/		=> 本<title>の更新ページ
+- root/books/<title>/delete/		=> 本<title>の削除ページ
+- root/accounts/			=> ユーザ一覧
+- root/accounts/<user_id>/		=> ユーザ<user_id>詳細
+- root/accounts/<user_id>/update/       => ユーザ<user_id>の更新ページ
+- root/accounts/<user_id>/delete/       => ユーザ<user_id>の削除ページ
+- root/profiles/<user_id>/		=> ユーザ<user_id>のマイページ
 
 ## Model
 

@@ -20,13 +20,16 @@
 - root/books/<title>		=> 本<title>の詳細ページ
 - root/books/<title>/update/	=> 本<title>の更新ページ
 - root/books/<title>/delete/	=> 本<title>の削除ページ
-- root/users/			=> ユーザ一覧
-- root/users/<name>		=> ユーザ<name>詳細
+- root/accounts/		=> ユーザ一覧
+- root/accounts/<id>/		=> ユーザ<id>詳細
+- root/accounts/<id>/update/    => ユーザ<id>の更新ページ
+- root/accounts/<id>/delete/    => ユーザ<id>の削除ページ
+- root/profiles/<id>/		=> ユーザ<id>のマイページ
 
 ## Model
 
 - User
-	- name (必須, ユニーク)
+	- username (必須, ユニーク)
 	- photo
 	- email (必須)
 	- password (必須)

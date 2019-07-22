@@ -21,7 +21,7 @@
 - root/books/<title>/update/	=> 本<title>の更新ページ
 - root/books/<title>/delete/	=> 本<title>の削除ページ
 - root/accounts/		=> ユーザ一覧
-- root/accounts/ <id> /		=> ユーザ<id>詳細
+- root/accounts/<user_id>/		=> ユーザ<id>詳細
 - root/accounts/<id>/update/    => ユーザ<id>の更新ページ
 - root/accounts/<id>/delete/    => ユーザ<id>の削除ページ
 - root/profiles/<id>/		=> ユーザ<id>のマイページ

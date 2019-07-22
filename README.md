@@ -28,7 +28,8 @@
 
 ## Model
 
-- User
+- CustomUser
+
 	- username (必須, ユニーク)
 	- photo
 	- email (必須)
@@ -36,6 +37,7 @@
 	- interest 
 
 - Book
+
 	- attrs (User.interestと同じ)
 	- owner (必須)
 	- borrower

@@ -41,7 +41,7 @@
 	- attrs (User.interestと同じ)
 	- owner (必須)
 	- borrower
-	- title (必須, primary key)
+	- title (必須, pk)
 	- isbn
 	- image
 	- author

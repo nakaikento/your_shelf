@@ -49,3 +49,11 @@
 	- publisher
 	- publish_date
 	- description
+
+- Request
+	- request_id (pk)
+	- title (fk)
+	- request_user
+	- request_flag
+	- return_flag
+

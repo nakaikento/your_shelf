@@ -1,13 +1,12 @@
 import os
-
+import environ
 
 ###############
 # Build paths #
 ###############
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) -3
 PROJECT_NAME = os.path.basename(BASE_DIR)
-
 
 ############
 # Security #
@@ -29,15 +28,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.humanize',
+    'books',
+    'profiles',
+    'django.contrib.sites',  # loginの実装で必要
+    'allauth',
+    'allauth.account',
     'accounts.apps.AccountsConfig',
-    'shop.apps.ShopConfig',
     'django_cleanup',
-
-    # 'django.contrib.sites',
-    # 'allauth',
-    # 'allauth.account',
-    # 'allauth.socialaccount',
 ]
 
 

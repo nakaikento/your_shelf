@@ -4,7 +4,8 @@ from .base import *
 
 # Read .env if exists
 env = environ.Env()
-env.read_env(os.path.join(BASE_DIR, '.env'))
+ENV_DIR = BASE_DIR - 1
+env.read_env(os.path.join(ENV_DIR, '.env'))
 
 
 #####################

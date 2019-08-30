@@ -1,11 +1,13 @@
 import environ
-from .base import *
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+from base import *
 # Read .env if exists
 env = environ.Env()
-ENV_DIR = os.path.join(BASE_DIR, '../'
+ENV_DIR = os.path.dirname(BASE_DIR)
 env.read_env(os.path.join(ENV_DIR, '.env'))
-
 
 #####################
 # Security settings #
@@ -77,13 +79,13 @@ LOGGING = {
 # Email settings #
 ##################
 
-EMAIL_CONFIG = env.email_url('EMAIL_URL')
-vars().update(EMAIL_CONFIG)
+# EMAIL_CONFIG = env.email_url('EMAIL_URL')
+# vars().update(EMAIL_CONFIG)
 
 
 ###################
 # Stripe settings #
 ###################
 
-STRIPE_API_KEY = env('STRIPE_API_KEY')
-STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
+# STRIPE_API_KEY = env('STRIPE_API_KEY')
+# STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
